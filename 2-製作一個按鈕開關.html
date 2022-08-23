@@ -1,0 +1,47 @@
+<html class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+<style>
+    .text-red {
+        color: red;
+    }
+
+    .text-green {
+        color: green;
+    }
+</style>
+<body class="h-hull grid place-items-center bg-gray-800 text-white">
+
+<!--
+# 小提示
+v-bind:class 等同於 :class
+v-on:click 等同於 @click
+ -->
+
+<div id="app">
+    <button :class="active ? 'text-red' : 'text-green'" class="border" @click="toggle">Click</button>
+</div>
+
+
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                active: true
+            }
+        },
+
+        methods: {
+            toggle() {
+                // active 預設為 true，當觸發 toggle 時，會將 true 的反面 false 賦予 active，這個反覆的過程就像一個開關一樣
+                this.active = ! this.active
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html class="h-full">
+<head>
+    <meta charSet="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+<body class="h-hull grid place-items-center bg-gray-800 text-white">
+<div id="app">
+    <input type="text" v-model="greeting" class="text-black"/>
+    <p>output: {{ greeting }} </p>
+    <p>length: {{ greeting.length}}</p>
+</div>
+
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                greeting: 'hello world'
+            }
+        }
+    }).mount('#app')
+</script>
+
+</body>
+</html>
